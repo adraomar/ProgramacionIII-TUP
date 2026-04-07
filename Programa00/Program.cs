@@ -1,4 +1,5 @@
-﻿class Program
+﻿namespace Programa00;
+class Program
 {
     static void Main(string[] args)
     {
