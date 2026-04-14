@@ -40,8 +40,19 @@ class Program
 
         // Ejercicio 1.3
         const int expMultiplier = 2;
-        int[] experiencia = { 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000 };
+        int[] experiencia = new int[10];
         int[] niveles = new int[10];
+
+        experiencia[0] = 100;
+        experiencia[1] = 200;
+        experiencia[2] = 300;
+        experiencia[3] = 400;
+        experiencia[4] = 500;
+        experiencia[5] = 600;
+        experiencia[6] = 700;
+        experiencia[7] = 800;
+        experiencia[8] = 900;
+        experiencia[9] = 1000;
 
         niveles[0] = experiencia[0] * expMultiplier;
         niveles[1] = experiencia[1] * expMultiplier;
@@ -69,8 +80,15 @@ class Program
         ContinueApp();
 
         // Ejercicio 1.4
-        string[] colores = { "Rojo", "Verde", "Azul", "Amarillo", "Cyan", "Blanco" };
+        string[] colores = new string[6];
         int[] rgbColores = new int[18];
+
+        colores[0] = "Rojo";
+        colores[1] = "Verde";
+        colores[2] = "Azul";
+        colores[3] = "Amarillo";
+        colores[4] = "Cyan";
+        colores[5] = "Blanco";
 
         // Rojo
         rgbColores[0] = 255;
