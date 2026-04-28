@@ -17,9 +17,12 @@ class CuentaBancaria
     }
 
     public CuentaBancaria(string nombreTitular, decimal saldo = 0)
-    {   
-        if(saldo < 0) 
-            throw new ArgumentException("El sado inicial no puede ser negativo");
+    {
+        if (saldo < 0)
+        {
+            Console.WriteLine("El saldo inicial no puede ser negativo");
+            saldo = 0;
+        }
 
         Titular = nombreTitular;
         this.saldo = saldo;
@@ -30,7 +33,11 @@ class CuentaBancaria
 
     public void Depositar(decimal monto)
     {
-        if(monto <= 0) throw new ArgumentException("El monto a depositar debe ser mayor a cero.");
+        if (monto <= 0)
+        {
+            Console.WriteLine("El monto debe ser mayor a cero.");
+            return;
+        }
 
         saldo += monto;
         historial.Add(FormatHistorial("Se ha realizado un deposito por $", monto, "- Saldo actual: $", saldo));
@@ -38,8 +45,17 @@ class CuentaBancaria
 
     public void Retirar(decimal monto)
     {
-        if(monto <= 0) throw new ArgumentException("El monto a retirar debe ser mayor a cero.");
-        if(monto > saldo) throw new InvalidOperationException("Saldo insuficiente para relizar el retiro.");
+        if (monto <= 0)
+        {
+            Console.WriteLine("El monto debe ser mayor a cero.");
+            return;
+        }
+
+        if (monto > saldo)
+        {
+            Console.WriteLine("Saldo insuficiente para realizar el retiro.");
+            return;
+        }
 
         saldo -= monto;
         historial.Add(FormatHistorial("Se ha relizado un retiro por $", monto, "- Saldo actual: $", saldo));
